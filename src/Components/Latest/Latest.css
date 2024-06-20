@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'Bergen Sans Semi Bold';
+    src: url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff2') format('woff2'),
+         url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap; 
+  }
+
+
+.Latest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10%;
+   
+}
+
+  .latest-heading h1{
+    text-align: center;
+    margin-left: -1%;
+    font-family: 'Bergen Sans Semi Bold', sans-serif;
+    font-weight: bold;
+    color: #22155B;
+    size: 40px;
+  }
+
+  .latest-headline{
+    height: 5vh;
+    padding: 6px;
+    background-color: white;
+ 
+  }
+  .latest-a {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+  }
+  
+  .latest-a a {
+    /* font-weight: bold; */
+    font-size: large;
+    color: #22155B; 
+    padding: 2px; 
+  }
+  .latest-a a:hover{
+    text-decoration: underline;
+    color: #FB2E86; 
+  }
+  .parent-grid{
+     display: flex;
+     align-content: center;
+  }
+  .latest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    margin-top: 20px;
+    padding: 15px;
+    width: 100%;
+  }
+  
+  .grid-item {
+    /* background-color: #fff; */
+   
+    padding: 20px;
+    max-width: 300px; /* Set max width */
+    height: 400px; /* Set fixed height */
+    border-radius: 1px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+  }
+  
+  .sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #3B27C7;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.grid-item:hover .sale-badge {
+    opacity: 1;
+}
+  
+  .product-image {
+    width: 70%;
+    height: auto;
+    margin-bottom: 10px;
+
+  }
+  
+  .product-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin-bottom: 10px;
+    margin-top: 5%;
+  }
+  
+  .product-info {
+   
+    text-align: center;
+    margin-top: 7%;
+  }
+  
+  .product-name {
+    font-family: 'Bergen Sans Semi Bold', sans-serif;
+    color: #22155B;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .product-price {
+    font-size: 16px;
+    color: #42a4f5;
+  }
+  
+  .old-price {
+    color:  #FB2E86;
+    text-decoration: line-through;
+    margin-left: 10px;
+  }
+  
+.upper-cont{
+    background-color: #f3f3f9;
+    max-width: 300px; /* Set max width */
+    height: 200px; /* Set fixed height */
+}
+
+.upper-cont:hover{
+  background-color: white;
+  max-width: 300px; /* Set max width */
+  height: 200px; /* Set fixed height */
+}
+
+.product-image-3 {
+  width: 77%;
+  height: auto;
+  margin-bottom: 10px;
+
+}
+
+.shopex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.shopex-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+
+}
+
+.shopex-card {
+ 
+  /* background-color: #f0f0f0; */
+  width: 30rem;
+  border-radius: 2px;
+  box-shadow: 0 6px 6px  rgba(1, 2.5, 1.5, 0.2);
+  
+  display: grid; 
+  grid-template-rows: 1fr 1fr;
+  height: 400px;
+}
+
+.shopex-card .shopex-text{
+  margin-top: 50%;
+  font-family: 'Bergen Sans Semi Bold', sans-serif;
+  color: #22155B;
+  text-align: center;
+}
+
+.shopex-card .shopex-p{
+ 
+  font-family: 'Bergen Sans Semi Bold', sans-serif;
+  color: #9c9c9c;
+  text-align: center;
+}
+
+
+.shopex-heading h1{
+  margin-top: 10%;
+  text-align: center;
+  margin-left: -1%;
+  font-family: 'Bergen Sans Semi Bold', sans-serif;
+  font-weight: bold;
+  color: #22155B;
+  size: 40px;
+}

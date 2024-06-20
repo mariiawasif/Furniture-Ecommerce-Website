@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Bergen Sans Semi Bold';
+    src: url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff2') format('woff2'),
+         url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap; /* Optional: determines how the font is displayed */
+  }
+  
+  /* Example usage */
+  h1 {
+    font-family: 'Bergen Sans Semi Bold', sans-serif;
+    font-size: 50px;
+    text-align: left;
+    margin-left: 15%;
+    margin-bottom: 20px;
+  }
+  p{
+    color: #7E33E0;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 20px;
+  }
+
+.hero {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 6rem 2rem; 
+    background-color: #f3f3f9;
+  }
+  h3{
+    text-transform: uppercase;
+    color: #FB2E86;
+    margin-bottom: 20px;
+  }
+  .hero-left {
+    margin-top: 15%;
+    text-align: center;
+    
+  }
+  
+  .hero-right img {
+    width: 70%;
+    margin-top: -15%;
+    height: auto;
+    margin-left: 15%;
+  }
+  .shop{
+    background-color: #FB2E86;
+    color: #ffffff; 
+    width: 150px; 
+    height: 40px;
+    padding: 0.6rem;
+    border-radius: 5rem;
+    border-style: none;
+   
+  }

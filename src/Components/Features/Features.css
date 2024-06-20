@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'Bergen Sans Semi Bold';
+    src: url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff2') format('woff2'),
+         url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap; 
+  }
+  
+  h2 {
+    font-family: 'Bergen Sans Semi Bold', sans-serif;
+    font-size: 35px;
+    text-align: left;
+    margin-left: 15%;
+    margin-top: 6%;
+    margin-bottom: 20px;
+    color: #22155B;
+  }
+  p{
+    color: #7E33E0;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 20px;
+  }
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 6rem 2rem; 
+    background-color: #f3f3f9;
+   
+  }
+  h3{
+    text-transform: uppercase;
+    color: #FB2E86;
+    margin-bottom: 20px;
+  }
+  .features-left {
+    margin-top: 15%;
+    text-align: center;
+    
+  }
+  
+  .features-left img {
+    width: 80%;
+    margin-top: -20%;
+    height: auto;
+    margin-left: 15%;
+  }
+
+  .cart{
+    background-color: #FB2E86;
+    color: #ffffff; 
+    width: 150px; 
+    height: 40px;
+    padding: 0.6rem;
+    border-style: none;
+    margin-left: 15%;
+    margin-top: 3%;
+   
+  }
+
+  .colored-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .colored-list li {
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+    margin-bottom: 10px;
+    color: #6c6c8c; 
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .red {
+    background-color: #ff0066;
+  }
+  
+  .blue {
+    background-color: #3b27c7;
+  }
+  
+  .teal {
+    background-color: #20dfd8;
+  }
+
+  .cart-p{
+    color: #22155B;
+    margin-top: -6%;
+    margin-left: 10%;
+  }
+  
+  .cart-p1{
+    color: #22155B;
+    margin-top: -3%;
+    margin-left: -2%;
+  }

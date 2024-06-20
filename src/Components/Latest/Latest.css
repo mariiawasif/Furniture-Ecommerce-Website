@@ -7,13 +7,11 @@
     font-display: swap; 
   }
 
-
 .Latest {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10%;
-   
+    margin-bottom: 10%;  
 }
 
   .latest-heading h1{
@@ -166,7 +164,6 @@
   width: 30rem;
   border-radius: 2px;
   box-shadow: 0 6px 6px  rgba(1, 2.5, 1.5, 0.2);
-  
   display: grid; 
   grid-template-rows: 1fr 1fr;
   height: 400px;
@@ -177,6 +174,7 @@
   font-family: 'Bergen Sans Semi Bold', sans-serif;
   color: #22155B;
   text-align: center;
+  margin-left: -2%;
 }
 
 .shopex-card .shopex-p{
@@ -184,8 +182,9 @@
   font-family: 'Bergen Sans Semi Bold', sans-serif;
   color: #9c9c9c;
   text-align: center;
-}
+  margin-left: -2%;
 
+}
 
 .shopex-heading h1{
   margin-top: 10%;
@@ -195,4 +194,5 @@
   font-weight: bold;
   color: #22155B;
   size: 40px;
+  margin-bottom: 10%;
 }

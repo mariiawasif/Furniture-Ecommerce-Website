@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Bergen Sans Semi Bold';
+    src: url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff2') format('woff2'),
+         url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap; 
+  }
+  
+  .trending-heading {
+    text-align: center;
+    margin-top: 8%;
+    margin-right: 15%;
+    font-family: 'Bergen Sans Semi Bold', sans-serif;
+    font-weight: bold;
+    color: #22155B;
+    font-size: 40px;
+  }
+  
+  .grid1 {
+    padding: 150px; 
+  }
+  
+  .trending-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+  
+  .grid-card {
+    background-color: white;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    border: 5px solid white;
+    margin-top: -20%;
+  }
+  
+  .grid-card-row1 {
+    background-color: #f3f3f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    max-height: 250px; /* Fixed height to ensure uniformity */
+    border-bottom: 10px solid white;
+    overflow: hidden; /* Prevents overflow of images */
+  }
+  
+  .grid-card-row2 {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .grid-card-row2:hover {
+    background-color: #2F1AC4;
+  }
+  
+  .grid-card-row2 h3 {
+    color: #FB2E86;
+    text-transform: none;
+    margin: 10px 0;
+  }
+  
+  .grid-card-row2 h4 {
+    font-family: 'Bergen Sans Semi Bold', sans-serif;
+    color: #22155B;
+    margin: 5px 0;
+  }
+  
+  .grid-card:hover .grid-card-row2 h3,
+  .grid-card:hover .grid-card-row2 h4,
+  .grid-card:hover .grid-card-row2 h5 {
+    color: white;
+  }
+  
+  .chair,
+  .chair3 {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover; /* Ensures the image covers the container proportionally */
+    object-position: center; /* Centers the image within the container */
+    margin-top: 10px;
+  }
+  

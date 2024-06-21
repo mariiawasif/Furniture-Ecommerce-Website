@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'Bergen Sans Semi Bold';
+    src: url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff2') format('woff2'),
+         url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap; 
+  }
+  
+  .discount-heading {
+    text-align: center;
+    margin-top: -10%;
+    margin-right: 15%;
+    font-family: 'Bergen Sans Semi Bold', sans-serif;
+    font-weight: bold;
+    color: #22155B;
+    font-size: 40px;
+  }
+
+  
+  .discount-headline{
+    height: 5vh;
+    padding: 6px;
+    background-color: white;
+ 
+  }
+  .discount-a {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+  }
+  
+  .discount-a a {
+    /* font-weight: bold; */
+    font-size: large;
+    color: #22155B; 
+    padding: 2px; 
+  }
+  .discount-a a:hover{
+    text-decoration: underline;
+    color: #FB2E86; 
+  }
+
+  
+  /* Example usage */
+ .discount-left h1 {
+    font-family: 'Bergen Sans Semi Bold', sans-serif;
+    font-size: 40px;
+    text-align: left;
+    margin-left: 15%;
+    margin-bottom: 20px;
+    color: #22155B;
+    white-space: nowrap;
+  }
+ .discount-left p{
+    color: rgb(193, 191, 191);
+    font-weight: 450;
+    text-align: center;
+    margin-left: 16%;
+    margin-bottom: 20px;
+    text-align: left;
+
+  }
+
+.discount-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 6rem 2rem; 
+    background-color: white;
+  }
+ .discount-left h3{
+    margin-right: 40%;
+    color: #FB2E86;
+    margin-bottom: 20px;
+  }
+  .discount-left {
+    margin-top: 7%;
+    text-align: center;
+    
+  }
+  
+  .discount-right img {
+    width: 70%;
+   
+    height: auto;
+    margin-left: 15%;
+  }
+  .shopbutton{
+    background-color: #FB2E86;
+    color: #ffffff; 
+    width: 180px; 
+    height: 50px;
+    padding: 0.6rem;
+    border-style: none;
+    margin-right: 43%;
+    margin-top: 2%;
+   
+  }
+
+  .parallel{
+    display: flex;
+  }

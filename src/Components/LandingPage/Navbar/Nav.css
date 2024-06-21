@@ -20,7 +20,7 @@ li {
 
 .nav__item a:hover {
     color: #FB2E86; 
-  }
+}
 
 .nav {
   display: flex;
@@ -29,12 +29,12 @@ li {
   height: 8vh;
   background: rgb(255, 255, 255);
 }
+
 .nav__brand {
   padding: 0%;
   width: 30%;
   height: 50%;
 }
-
 
 .nav__brand .logo {
   padding: 0%;
@@ -59,9 +59,6 @@ li {
   background: rgb(204, 204, 204);
   transition: 0.3s ease-in;
 }
-
-
-
 
 @media screen and (max-width: 768px) {
     

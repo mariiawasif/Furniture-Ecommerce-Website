@@ -1,62 +1,125 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faShoppingCart, faHeart  } from '@fortawesome/free-solid-svg-icons';
-import "./Header.css";
+import { faSearch, faShoppingCart, faHeart } from '@fortawesome/free-solid-svg-icons';
 
-function Header() {
-  const [active, setActive] = useState("header_menu");
-  const [icon, setIcon] = useState("header__toggler");
+const HeaderContainer = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8vh;
+  background: #7E33E0;
+  padding: 0 2rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 1rem;
+  }
+`;
+
+const Brand = styled.a`
+  text-transform: lowercase;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+`;
+
+const Menu = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 8vh);
+    background: #7E33E0;
+    padding: 2rem 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+
+    &.header_active {
+      transform: translateY(0%);
+    }
+  }
+`;
+
+const MenuItem = styled.li`
+  list-style: none;
+`;
+
+const MenuLink = styled.a`
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+`;
+
+const Toggler = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 2rem;
+    height: 2rem;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 10;
+
+    div {
+      width: 100%;
+      height: 0.2rem;
+      background: #fff;
+      transition: transform 0.3s ease-in-out;
+
+      &.line1.toggle {
+        transform: rotate(-45deg) translate(-3px, 2px);
+      }
+
+      &.line3.toggle {
+        transform: rotate(45deg) translate(-3px, -2px);
+      }
+    }
+  }
+`;
+const Header = () => {
+  const [active, setActive] = useState(false);
+  const [toggleIcon, setToggleIcon] = useState(false);
+
   const headerToggle = () => {
-    if (active === "header_menu") {
-      setActive("header_menu header_active");
-    } else setActive("header_menu");
-
-    if (icon === "header__toggler") {
-      setIcon("header__toggler toggle");
-    } else setIcon("header__toggler");
+    setActive(!active);
+    setToggleIcon(!toggleIcon);
   };
+
   return (
-    <nav className="header">
-      <a href="#" className="header_brand">
-        mhhasanul@gmail.com
-      </a>
-      <a href="#" className="header_brand-2">
-        (123456) 7890
-      </a>
-      <ul className={active}>
-        <li className="header__item">
-          <a href="#" className="header__link">
-            English
-          </a>
-        </li>
-        <li className="header__item">
-          <a href="#" className="header__link">
-            USD
-          </a>
-        </li>
-        <li className="header__item">
-          <a href="#" className="header__link">
-            Login
-          </a>
-        </li>
-        <li className="header__item">
-          <a href="#" className="header__link">
-            Wishlist 
-          
-          </a>
-        </li>
-        <li className="header__item">
-          <a href="#" className="header__link">
-          <FontAwesomeIcon icon={faShoppingCart} />
-          </a>
-        </li>
-      </ul>
-      <div onClick={headerToggle} className={icon}>
-        <div className="line1"></div>
-        <div className="line2"></div>
-        <div className="line3"></div>
-      </div>
-    </nav>
+    <HeaderContainer>
+      <Brand href="#">mhhasanul@gmail.com</Brand>
+      <Menu className={active ? "header_active" : ""}>
+        <MenuItem>
+          <MenuLink href="#">English</MenuLink>
+        </MenuItem>
+        <MenuItem>
+          <MenuLink href="#">USD</MenuLink>
+        </MenuItem>
+        <MenuItem>
+          <MenuLink href="#">Login</MenuLink>
+        </MenuItem>
+        <MenuItem>
+          <MenuLink href="#">Wishlist</MenuLink>
+        </MenuItem>
+        <MenuItem>
+          <MenuLink href="#"><FontAwesomeIcon icon={faShoppingCart} /></MenuLink>
+        </MenuItem>
+      </Menu>
+      <Toggler onClick={headerToggle}>
+        <div className={toggleIcon ? "line1 toggle" : "line1"}></div>
+        <div className={toggleIcon ? "line2 toggle" : "line2"}></div>
+        <div className={toggleIcon ? "line3 toggle" : "line3"}></div>
+      </Toggler>
+    </HeaderContainer>
   );
 }
 

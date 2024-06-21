@@ -1,11 +1,11 @@
 import React from "react";
 import "./Trending.css";
-import chair from './chair1.png';
-import chair2 from './chair2.png';
-import chair3 from './chair5.png';
-import chair4 from './chair4.png';
-import image from './image.png';
-import image2 from './image2.png';
+import chair from '../../assets/Trending/chair1.png';
+import chair2 from '../../assets/Trending/chair2.png';
+import chair3 from '../../assets/Trending/chair5.png';
+import chair4 from '../../assets/Trending/chair4.png';
+import image from '../../assets/Trending/chair6.png';
+import image2 from '../../assets/Trending/chair7.png';
 
 function Trending() {
   return (

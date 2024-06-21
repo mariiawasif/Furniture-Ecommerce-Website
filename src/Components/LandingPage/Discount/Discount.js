@@ -1,6 +1,6 @@
 import React from 'react';
 import './Discount.css';
-import sofa from './sofa-image.png';
+import sofa from '../../assets/Discount/sofa-image.png';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Discount(){

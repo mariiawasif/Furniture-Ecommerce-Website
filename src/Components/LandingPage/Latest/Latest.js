@@ -2,12 +2,12 @@ import React from 'react';
 import './Latest.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart, faHeart, faMagnifyingGlassPlus   } from '@fortawesome/free-solid-svg-icons';
-import productImage from './pic1.png';
-import productImage2 from './pic2.png';
-import productImage3 from './pic3.png'
-import productImage4 from './pic4.png'
-import productImage5 from './pic5.png';
-import productImage6 from './pic7.png';
+import productImage from '../../assets/Latest/pic1.png';
+import productImage2 from '../../assets/Latest/pic2.png';
+import productImage3 from '../../assets/Latest/pic3.png'
+import productImage4 from '../../assets/Latest/pic4.png'
+import productImage5 from '../../assets/Latest/pic5.png';
+import productImage6 from '../../assets/Latest/pic7.png';
 
 function Latest(){
     return(

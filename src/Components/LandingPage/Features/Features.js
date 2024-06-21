@@ -1,5 +1,5 @@
 import React from "react";
-import image from './image.png';
+import image from '../../assets/Features/image.png';
 import "./Features.css";
 
 function Features() {

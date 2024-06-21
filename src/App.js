@@ -1,13 +1,14 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import Navbar from './Components/Navbar/Nav';
-import Header from './Components/Header/Header';
-import Hero from './Components/Hero/Hero';
-import Featured from './Components/Featured/Featured';
-import Latest from './Components/Latest/Latest';
-import Features from './Components/Features/Features';
-import Trending from './Components/Trending/Trending';
-import Discount from './Components/Discount/Discount';
+import Navbar from './Components/LandingPage/Navbar/Nav';
+import Header from './Components/LandingPage/Header/Header';
+import Hero from './Components/LandingPage/Hero/Hero';
+import Featured from './Components/LandingPage/Featured/Featured';
+import Latest from './Components/LandingPage/Latest/Latest';
+import Features from './Components/LandingPage/Features/Features';
+import Trending from './Components/LandingPage/Trending/Trending';
+import Discount from './Components/LandingPage/Discount/Discount';
+import Categories from './Components/LandingPage/Categories/Categories';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Features/>
       <Trending/>
       <Discount/>
+      <Categories/>
     </BrowserRouter>
   );
 }

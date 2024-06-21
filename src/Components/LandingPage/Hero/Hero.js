@@ -1,5 +1,5 @@
 import React from "react";
-import sofa from './sofa (2).png';
+import sofa from '../../assets/Hero/sofa (2).png';
 import "./Hero.css";
 
 function Hero() {

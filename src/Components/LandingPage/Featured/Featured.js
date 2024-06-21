@@ -3,10 +3,10 @@ import React from "react";
 import "./Featured.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart, faHeart, faMagnifyingGlassPlus   } from '@fortawesome/free-solid-svg-icons';
-import chair from './chair.png';
-import chair2 from './chair2.png';
-import chair3 from './chair3.png';
-import chair4 from './chair4.png';
+import chair from '../../assets/Featured/chair.png';
+import chair2 from '../../assets/Featured/chair2.png';
+import chair3 from '../../assets/Featured/chair3.png';
+import chair4 from '../../assets/Featured/chair4.png';
 
 function Featured() {
   return (

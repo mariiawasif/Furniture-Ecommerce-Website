@@ -118,6 +118,7 @@
   .product-price {
     font-size: 16px;
     color: #42a4f5;
+
   }
   
   .old-price {
@@ -128,8 +129,8 @@
   
 .upper-cont{
     background-color: #f3f3f9;
-    max-width: 300px; /* Set max width */
-    height: 200px; /* Set fixed height */
+    max-width: 300px; 
+    height: 200px; 
 }
 
 .upper-cont:hover{

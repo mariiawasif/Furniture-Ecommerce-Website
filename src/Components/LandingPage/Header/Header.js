@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faShoppingCart, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderContainer = styled.nav`
   display: flex;
@@ -20,6 +20,7 @@ const Brand = styled.a`
   text-transform: lowercase;
   color: rgb(255, 255, 255);
   text-decoration: none;
+  font-weight: 0;
 `;
 
 const Menu = styled.ul`

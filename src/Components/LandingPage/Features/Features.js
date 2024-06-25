@@ -114,9 +114,9 @@ const CartButton = styled.button`
   margin-top: 3%;
 
   @media (max-width: 768px) {
-    margin-left: auto; /* Center the button on smaller screens */
-    margin-right: auto; /* Center the button on smaller screens */
-    display: block; /* Ensure button takes full width on smaller screens */
+    margin-left: auto; 
+    margin-right: auto; 
+    display: block;
   }
 `;
 
@@ -135,7 +135,7 @@ const CartParagraph = styled.p`
 
 const PriceParagraph = styled.p`
   color: #22155B;
-  margin-top: -3%;
+  margin-top: -5%;
   margin-left: 15%;
 
   @media (max-width: 768px) {

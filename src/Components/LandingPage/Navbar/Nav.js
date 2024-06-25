@@ -56,15 +56,15 @@ const NavBrand = styled.a`
 
 const Logo = styled.img`
   padding: 0%;
-  width: 30%;
-  height: 300%;
+  width: 20%;
+  height: 320%;
   margin-top: -7%;
   align-items: start;
 
   @media screen and (max-width: 768px) {
     width: 50%;
     height: 90px;
-    margin-top: -15%;
+    margin-top: -25%;
   }
 `;
 

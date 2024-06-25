@@ -119,6 +119,7 @@ const ShopexContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  margin-bottom: -4%;
 
   @media (max-width: 1200px) {
     gap: 15px;

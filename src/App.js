@@ -20,9 +20,9 @@ function App() {
       <Navbar/>
       <Hero/>
       <Featured/>
-       <Latest/>
-      {/* <Features/>  */}
-      {/* <Trending/> */}
+      <Latest/> 
+      <Features/> 
+      <Trending/>
       {/* <Discount/> */}
       {/* <Categories/> */}
       {/* <Newsletter/> */}

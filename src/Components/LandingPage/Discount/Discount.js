@@ -180,7 +180,6 @@ const Discount = () => {
           
           <ShopButton>Shop Now</ShopButton>
         </DiscountLeft>
-
         <DiscountRight>
           <img src={sofa} alt="Hero Image" className="sofa-img" />
         </DiscountRight>

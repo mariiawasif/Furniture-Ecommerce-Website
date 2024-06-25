@@ -4,8 +4,6 @@ import productImage from '../../assets/Categories/chair1.png';
 import productImage1 from '../../assets/Categories/chair.png';
 import productImage2 from '../../assets/Categories/pic.png';
 
-
-
 const Category = styled.div`
   font-family: 'Bergen Sans Semi Bold', sans-serif;
 `;
@@ -14,7 +12,6 @@ const CHeading = styled.h1`
   color: #22155B;
   font-size: 40px;
   text-align: center;
-//   margin-right: 15%;
 `;
 
 const PGrid = styled.div`
@@ -32,6 +29,14 @@ const CGrid = styled.div`
   margin-top: -10px;
   padding: 15px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+  }
 `;
 
 const CGridItemContainer = styled.div`

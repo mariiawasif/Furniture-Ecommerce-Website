@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const HeaderContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 8vh;
-  background: #7E33E0;
+  background: #7e33e0;
   padding: 0 2rem;
 
   @media screen and (max-width: 768px) {
@@ -30,21 +30,18 @@ const Menu = styled.ul`
   gap: 3rem;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    display: ${(props) => (props.active ? "flex" : "none")};
     flex-direction: column;
     position: fixed;
     top: 8vh;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 40%;
+    gap: 1rem;
     height: calc(100vh - 8vh);
-    background: #7E33E0;
+    background: #7e33e0;
     padding: 2rem 0;
-    transform: translateY(-100%);
+    transform: translateY(${(props) => (props.active ? "0" : "-100%")});
     transition: transform 0.3s ease-in-out;
-
-    &.header_active {
-      transform: translateY(0%);
-    }
   }
 `;
 
@@ -86,6 +83,7 @@ const Toggler = styled.div`
     }
   }
 `;
+
 const Header = () => {
   const [active, setActive] = useState(false);
   const [toggleIcon, setToggleIcon] = useState(false);
@@ -98,7 +96,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Brand href="#">mhhasanul@gmail.com</Brand>
-      <Menu className={active ? "header_active" : ""}>
+      <Menu active={active}>
         <MenuItem>
           <MenuLink href="#">English</MenuLink>
         </MenuItem>
@@ -112,7 +110,9 @@ const Header = () => {
           <MenuLink href="#">Wishlist</MenuLink>
         </MenuItem>
         <MenuItem>
-          <MenuLink href="#"><FontAwesomeIcon icon={faShoppingCart} /></MenuLink>
+          <MenuLink href="#">
+            <FontAwesomeIcon icon={faShoppingCart} />
+          </MenuLink>
         </MenuItem>
       </Menu>
       <Toggler onClick={headerToggle}>
@@ -122,6 +122,6 @@ const Header = () => {
       </Toggler>
     </HeaderContainer>
   );
-}
+};
 
 export default Header;

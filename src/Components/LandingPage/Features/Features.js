@@ -36,6 +36,10 @@ const SofaImage = styled.img`
 
 const FeaturesRight = styled.div`
   text-align: left;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const Title = styled.h2`
@@ -59,6 +63,12 @@ const StyledList = styled.ul`
   padding: 0;
   margin: 0;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const ListItem = styled.li`
@@ -69,8 +79,7 @@ const ListItem = styled.li`
   color: #6c6c8c; 
 
   @media (max-width: 768px) {
-    margin-left: auto; 
-    margin-right: auto; 
+    margin-left: 0; 
   }
 `;
 
@@ -134,7 +143,6 @@ const PriceParagraph = styled.p`
     margin-left: auto;
     margin-right: auto; 
     text-align: center; 
-    
   }
 `;
 

@@ -213,7 +213,7 @@ const TrendingContainer = styled.div`
   .containers {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
     padding: 0 50px;
     width: 170%;
 
@@ -242,7 +242,7 @@ const TrendingContainer = styled.div`
 
   .t-container {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     margin-bottom: 20px;
     flex-wrap: wrap;
   }
@@ -362,7 +362,7 @@ const TrendingContainer = styled.div`
     @media screen and (max-width: 768px) {
       margin-right: 0;
       margin-bottom: 10px;
-      width: 150px;
+      width: 100px;
     }
   }
 
@@ -450,6 +450,8 @@ const Trending = () => {
         </div>
       </div>
 
+
+      {/* Horizontal Grids */}
       <div className="app-container">
         <div className="t-container">
           <div className="t-item">
@@ -468,6 +470,8 @@ const Trending = () => {
           </div>
         </div>
 
+
+      {/* Product Lists */}
         <div className="product-list">
           <div className="product-item">
             <img src={image} alt="Product Image" className="list-product-image"/>

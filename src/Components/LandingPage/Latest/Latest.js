@@ -1,20 +1,20 @@
-import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faShoppingCart, faHeart } from '@fortawesome/free-solid-svg-icons';
-import productImage from '../../assets/Latest/pic1.png';
-import productImage2 from '../../assets/Latest/pic2.png';
-import productImage3 from '../../assets/Latest/pic3.png';
-import productImage4 from '../../assets/Latest/pic4.png';
-import productImage5 from '../../assets/Latest/pic5.png';
-import productImage6 from '../../assets/Latest/pic7.png';
+import React from "react";
+import styled, { createGlobalStyle } from "styled-components";
+import FeaturedCard from "../Featured/FeaturedCard";
+import productImage from "../../assets/Latest/pic1.png";
+import productImage2 from "../../assets/Latest/pic2.png";
+import productImage3 from "../../assets/Latest/pic3.png";
+import productImage4 from "../../assets/Latest/pic4.png";
+import productImage5 from "../../assets/Latest/pic5.png";
+import productImage6 from "../../assets/Latest/pic7.png";
+import Shopex from "./Shopex";
 
 // Global Styles
 const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: 'Bergen Sans Semi Bold';
-    src: url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff2') format('woff2'),
-         url('C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff') format('woff');
+    font-family: "Bergen Sans Semi Bold";
+    src: url("C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff2") format("woff2"),
+         url("C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff") format("woff");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -35,16 +35,16 @@ const LatestContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10%;  
+  margin-bottom: 10%;
   justify-content: center;
 `;
 
 const LatestHeading = styled.h1`
   text-align: center;
   margin-left: -1%;
-  font-family: 'Bergen Sans Semi Bold', sans-serif;
+  font-family: "Bergen Sans Semi Bold", sans-serif;
   font-weight: bold;
-  color: #22155B;
+  color: #22155b;
   font-size: 4rem;
 `;
 
@@ -62,179 +62,80 @@ const LatestLinks = styled.div`
 
 const LatestLink = styled.a`
   font-size: large;
-  color: #22155B;
+  color: #22155b;
   padding: 2px;
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
-    color: #FB2E86;
+    color: #fb2e86;
   }
 `;
 
 const ParentGrid = styled.div`
   display: flex;
   justify-content: center;
+  padding: 2rem 0;
 `;
+
 const LatestGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
-  margin-top: 20px;
-  padding: 15px;
-  width: 100%;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column on small screens */
   }
 `;
 
-const GridItem = styled.div`
-  padding: 20px;
-  max-width: 300px;
-  height: 400px;
-  border-radius: 1px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+const CardWrapper = styled.div`
   position: relative;
-  text-align: center;
+  width: 100%;
 `;
 
 const SaleBadge = styled.div`
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: #3B27C7;
+  background-color: #3b27c7;
   color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-
-  ${GridItem}:hover & {
-    opacity: 1;
-  }
 `;
 
-const ProductImage = styled.img`
-  width: 70%;
-  height: auto;
-  margin-bottom: 10px;
-`;
-
-const ProductImage3 = styled(ProductImage)`
-  width: 77%;
-`;
-
-const UpperContainer = styled.div`
-  background-color: #f3f3f9;
-  max-width: 300px;
-  height: 200px;
-  margin-bottom: 10px;
-
-  &:hover {
-    background-color: white;
-  }
-`;
-
-const ProductIcons = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 10px;
-  margin-top: 5%;
-`;
-
-const ProductInfo = styled.div`
-  text-align: center;
-  margin-top: 7%;
-`;
-
-const ProductName = styled.p`
-  font-family: 'Bergen Sans Semi Bold', sans-serif;
-  color: #22155B;
-  font-size: 1.8rem;
-  margin-bottom: 5px;
-`;
-
-const ProductPrice = styled.p`
-  font-size: 1.6rem;
-  color: #42a4f5;
-`;
-
-const OldPrice = styled.span`
-  color: #FB2E86;
-  text-decoration: line-through;
-  margin-left: 10px;
-`;
-
-const ShopexHeading = styled.h1`
-  margin-top: 10%;
-  text-align: center;
-  margin-left: -1%;
-  font-family: 'Bergen Sans Semi Bold', sans-serif;
-  font-weight: bold;
-  color: #22155B;
-  font-size: 4rem;
-  margin-bottom: 10%;
-`;
-
-const ShopexGrid = styled.div`
+const ShopexContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   justify-content: center;
-  align-items: center;
-  align-content: center;
-  margin-top: -7%;
-  gap: 5px;
-  width: 100%;
-  padding: 90px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 
   @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 100px;
+    gap: 15px;
+    padding: 15px;
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 100px;
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    gap: 10px;
+    padding: 10px;
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-    padding: 100px;
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 5px;
+    padding: 5px;
   }
-`;
-
-const ShopexCard = styled.div`
-  width: 30rem;
-  border-radius: 2px;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-  height: 400px;
-  padding: 20px;
-`;
-
-const ShopexText = styled.h2`
-  font-family: 'Bergen Sans Semi Bold', sans-serif;
-  color: #22155B;
-  justify-content: center;
-  text-align: center;
-  margin-top: 50%;
-  
-`;
-
-const ShopexP = styled.p`
-  font-family: 'Bergen Sans Semi Bold', sans-serif;
-  color: #9c9c9c;
-  text-align: center;
 `;
 
 function Latest() {
@@ -253,122 +154,81 @@ function Latest() {
         </LatestHeadline>
         <ParentGrid>
           <LatestGrid>
-            <GridItem>
-              <UpperContainer>
-                <SaleBadge>Sale</SaleBadge>
-                <ProductImage src={productImage} alt="Product" />
-              </UpperContainer>
-              <ProductIcons>
-                <FontAwesomeIcon icon={faShoppingCart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faHeart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faSearch} style={{ color: '#3B27C7' }} />
-              </ProductIcons>
-              <ProductInfo>
-                <ProductName>Comfort Handy Craft</ProductName>
-                <ProductPrice>$42.00 <OldPrice>$65.00</OldPrice></ProductPrice>
-              </ProductInfo>
-            </GridItem>
-
-            <GridItem>
-              <UpperContainer>
-                <SaleBadge>Sale</SaleBadge>
-                <ProductImage src={productImage2} alt="Product" />
-              </UpperContainer>
-              <ProductIcons>
-                <FontAwesomeIcon icon={faShoppingCart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faHeart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faSearch} style={{ color: '#3B27C7' }} />
-              </ProductIcons>
-              <ProductInfo>
-                <ProductName>Comfort Handy Craft</ProductName>
-                <ProductPrice>$42.00 <OldPrice>$65.00</OldPrice></ProductPrice>
-              </ProductInfo>
-            </GridItem>
-
-            <GridItem>
-              <UpperContainer>
-                <SaleBadge>Sale</SaleBadge>
-                <ProductImage3 src={productImage3} alt="Product" />
-              </UpperContainer>
-              <ProductIcons>
-                <FontAwesomeIcon icon={faShoppingCart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faHeart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faSearch} style={{ color: '#3B27C7' }} />
-              </ProductIcons>
-              <ProductInfo>
-                <ProductName>Comfort Handy Craft</ProductName>
-                <ProductPrice>$42.00 <OldPrice>$65.00</OldPrice></ProductPrice>
-              </ProductInfo>
-            </GridItem>
-
-            <GridItem>
-              <UpperContainer>
-                <SaleBadge>Sale</SaleBadge>
-                <ProductImage src={productImage4} alt="Product" />
-              </UpperContainer>
-              <ProductIcons>
-                <FontAwesomeIcon icon={faShoppingCart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faHeart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faSearch} style={{ color: '#3B27C7' }} />
-              </ProductIcons>
-              <ProductInfo>
-                <ProductName>Comfort Handy Craft</ProductName>
-                <ProductPrice>$42.00 <OldPrice>$65.00</OldPrice></ProductPrice>
-              </ProductInfo>
-            </GridItem>
-
-            <GridItem>
-              <UpperContainer>
-                <SaleBadge>Sale</SaleBadge>
-                <ProductImage src={productImage5} alt="Product" />
-              </UpperContainer>
-              <ProductIcons>
-                <FontAwesomeIcon icon={faShoppingCart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faHeart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faSearch} style={{ color: '#3B27C7' }} />
-              </ProductIcons>
-              <ProductInfo>
-                <ProductName>Comfort Handy Craft</ProductName>
-                <ProductPrice>$42.00 <OldPrice>$65.00</OldPrice></ProductPrice>
-              </ProductInfo>
-            </GridItem>
-
-            <GridItem>
-              <UpperContainer>
-                <SaleBadge>Sale</SaleBadge>
-                <ProductImage src={productImage6} alt="Product" style={{ marginTop: '8%' }} />
-              </UpperContainer>
-              <ProductIcons>
-                <FontAwesomeIcon icon={faShoppingCart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faHeart} style={{ color: '#3B27C7' }} />
-                <FontAwesomeIcon icon={faSearch} style={{ color: '#3B27C7' }} />
-              </ProductIcons>
-              <ProductInfo>
-                <ProductName>Comfort Handy Craft</ProductName>
-                <ProductPrice>$42.00 <OldPrice>$65.00</OldPrice></ProductPrice>
-              </ProductInfo>
-            </GridItem>
+            <CardWrapper>
+              <SaleBadge>Sale</SaleBadge>
+              <FeaturedCard
+                image={productImage}
+                title="Comfort Handy Craft"
+                code="12345"
+                price="42.00"
+              />
+            </CardWrapper>
+            <CardWrapper>
+              <SaleBadge>Sale</SaleBadge>
+              <FeaturedCard
+                image={productImage2}
+                title="Comfort Handy Craft"
+                code="12346"
+                price="42.00"
+              />
+            </CardWrapper>
+            <CardWrapper>
+              <SaleBadge>Sale</SaleBadge>
+              <FeaturedCard
+                image={productImage3}
+                title="Comfort Handy Craft"
+                code="12347"
+                price="42.00"
+              />
+            </CardWrapper>
+            <CardWrapper>
+              <SaleBadge>Sale</SaleBadge>
+              <FeaturedCard
+                image={productImage4}
+                title="Comfort Handy Craft"
+                code="12348"
+                price="42.00"
+              />
+            </CardWrapper>
+            <CardWrapper>
+              <SaleBadge>Sale</SaleBadge>
+              <FeaturedCard
+                image={productImage5}
+                title="Comfort Handy Craft"
+                code="12349"
+                price="42.00"
+              />
+            </CardWrapper>
+            <CardWrapper>
+              <SaleBadge>Sale</SaleBadge>
+              <FeaturedCard
+                image={productImage6}
+                title="Comfort Handy Craft"
+                code="12350"
+                price="42.00"
+              />
+            </CardWrapper>
           </LatestGrid>
         </ParentGrid>
-        <ShopexHeading>What Shoppex Offers</ShopexHeading>
-        <ShopexGrid>
-          <ShopexCard>
-            <ShopexText>24/7 Support</ShopexText>
-            <ShopexP>No matter the hour, count on us for reliable 24/7 support!</ShopexP>
-          </ShopexCard>
-          <ShopexCard>
-            <ShopexText>24/7 Support</ShopexText>
-            <ShopexP>No matter the hour, count on us for reliable 24/7 support!</ShopexP>
-          </ShopexCard>
-          <ShopexCard>
-            <ShopexText>24/7 Support</ShopexText>
-            <ShopexP>No matter the hour, count on us for reliable 24/7 support!</ShopexP>
-          </ShopexCard>
-          <ShopexCard>
-            <ShopexText>24/7 Support</ShopexText>
-            <ShopexP>No matter the hour, count on us for reliable 24/7 support!</ShopexP>
-          </ShopexCard>
-        </ShopexGrid>
+        <LatestHeading>What Shopex Offers</LatestHeading>
+        <ShopexContainer>
+          <Shopex
+            title="24/7 Support"
+            text="No matter the hour, count on us for reliable 24/7 support!"
+          />
+          <Shopex
+            title="Free Shipping"
+            text="Get free shipping on all orders above $50."
+          />
+          <Shopex
+            title="Easy Returns"
+            text="30-day return policy on all purchases."
+          />
+          <Shopex
+            title="Secure Payment"
+            text="100% secure payment with SSL encryption."
+          />
+        </ShopexContainer>
       </LatestContainer>
     </>
   );

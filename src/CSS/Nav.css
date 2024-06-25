@@ -49,16 +49,20 @@ li {
   justify-content: space-around;
   gap: 3rem;
 }
+
 .nav__toggler {
   display: none;
 }
+
 .nav__toggler div {
   width: 2.5rem;
   height: 0.2rem;
   margin: 0.4rem;
   background: rgb(204, 204, 204);
   transition: 0.3s ease-in;
+  
 }
+
 
 @media screen and (max-width: 768px) {
     
@@ -83,6 +87,7 @@ li {
       transform: translateX(100%);
       transition: 0.5s ease-in;
     }
+    
   
 
   }

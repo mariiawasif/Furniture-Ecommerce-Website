@@ -28,14 +28,15 @@ const CardImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60%;
+  height: 240px; /* Fixed height for image container */
   width: 100%;
   overflow: hidden;
 `;
 
 const CardImage = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container */
 `;
 
 const CardContent = styled.div`
@@ -54,18 +55,17 @@ const CardContent = styled.div`
     color: #22155B;
     font-size: 1.6rem;
   }
- 
-   &:hover {
+
+  &:hover {
     background-color: #7e33e0; /* Change background color on hover */
     
-    h3{
-    color: white; 
+    h3 {
+      color: white;
     }
-    h4{
-    color: white;
+    h4 {
+      color: white;
     }
   }
-
 `;
 
 const CardActions = styled.div`

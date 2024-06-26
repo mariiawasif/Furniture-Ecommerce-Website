@@ -6,11 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const DiscountPage = styled.div`
   font-family: 'Bergen Sans Semi Bold', sans-serif;
+  
 `;
 
 const DiscountHeading = styled.h1`
   text-align: center;
-  margin-top: -10%;
+  margin-top: 5%;
   font-weight: bold;
   color: #22155B;
   font-size: 40px;
@@ -25,6 +26,14 @@ const DiscountHeadline = styled.div`
   height: 5vh;
   padding: 6px;
   background-color: white;
+ 
+  
+  @media (max-width: 480px) {
+    width: 70%;
+    margin-left: 15%;
+    // white-space: nowrap;
+  }
+
 `;
 
 const LatestA = styled.div`

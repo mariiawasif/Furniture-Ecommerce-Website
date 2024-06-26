@@ -74,7 +74,7 @@ const FeaturedGrid = styled.div`
   padding: 0 20px; 
 
  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(2, 1fr); 
     gap: 3rem;
     padding: 0 15px;
   }

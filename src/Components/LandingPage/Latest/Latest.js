@@ -49,10 +49,31 @@ const LatestHeading = styled.h1`
 `;
 
 const LatestHeadline = styled.div`
-  height: 5vh;
   padding: 6px;
   background-color: white;
+
+  /* Default height for large screens */
+  height: 5vh;
+
+  @media (max-width: 1200px) {
+    height: 6vh;
+  }
+
+  @media (max-width: 1024px) {
+    height: 7vh;
+  }
+
+  @media (max-width: 768px) {
+    height: 8vh;
+  }
+
+  @media (max-width: 480px) {
+    width: 70%;
+    height: 8vh;
+    // white-space: nowrap;
+  }
 `;
+
 
 const LatestLinks = styled.div`
   display: flex;
@@ -97,7 +118,14 @@ const LatestGrid = styled.div`
 
 const CardWrapper = styled.div`
   position: relative;
-  width: 100%;
+  // width: 100%;
+  // background-color: #fff;
+  // border-radius: 8px;
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  // overflow: hidden;
+  // display: flex;
+  // flex-direction: column;
+  align-items: center;
 `;
 
 const SaleBadge = styled.div`
@@ -109,6 +137,11 @@ const SaleBadge = styled.div`
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
+`;
+
+const ProductImage = styled.img`
+  width: 100%;
+  height: auto;
 `;
 
 const ShopexContainer = styled.div`
@@ -124,6 +157,10 @@ const ShopexContainer = styled.div`
   @media (max-width: 1200px) {
     gap: 15px;
     padding: 15px;
+  }
+
+   @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
   }
 
   @media (max-width: 768px) {

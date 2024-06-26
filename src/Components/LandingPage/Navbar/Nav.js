@@ -6,9 +6,14 @@ import logo from '../../assets/Navbar/logo.png';
 const NavContainer = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 8vh;
   background: rgb(255, 255, 255);
+  padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
 `;
 
 const NavMenu = styled.ul`
@@ -23,7 +28,6 @@ const NavMenu = styled.ul`
     top: 8vh;
     right: 0;
     gap: 1rem;
-    margin-bottom: 5%;
     height: 92vh;
     width: 30vw;
     background: rgb(255, 255, 255);
@@ -49,28 +53,36 @@ const NavLink = styled.a`
 `;
 
 const NavBrand = styled.a`
-  padding: 0%;
-  width: 30%;
-  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Logo = styled.img`
-  padding: 0%;
-  width: 20%;
-  height: 320%;
-  margin-top: -7%;
-  align-items: start;
+  width: auto;
+  height: 6vh; // Make sure the logo stays within the navbar height
 
   @media screen and (max-width: 768px) {
-    width: 50%;
-    height: 90px;
-    margin-top: -25%;
+    height: 5vh;
+  }
+
+  @media screen and (max-width: 425px) {
+    height: 4.5vh;
+  }
+
+  @media screen and (max-width: 320px) {
+    height: 4vh;
   }
 `;
 
 const SearchBar = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    margin-right: 14%;
+    width: 10%;
+  }
 `;
 
 const SearchInput = styled.input`
@@ -96,6 +108,10 @@ const SearchButton = styled.button`
     padding: 0.6rem;
     border-radius: 0.25rem;
   }
+
+  @media (max-width: 1024px) {
+    margin-top: -80%;
+  }
 `;
 
 const NavToggler = styled.div`
@@ -103,6 +119,10 @@ const NavToggler = styled.div`
 
   @media screen and (max-width: 768px) {
     display: block;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 425px) {
     cursor: pointer;
   }
 

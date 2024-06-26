@@ -21,6 +21,10 @@ const Brand = styled.a`
   color: rgb(255, 255, 255);
   text-decoration: none;
   font-weight: 0;
+
+   @media screen and (max-width: 768px) {
+    margin-top: 2%;
+  }
 `;
 
 const Menu = styled.ul`
@@ -66,6 +70,7 @@ const Toggler = styled.div`
     flex-direction: column;
     cursor: pointer;
     z-index: 10;
+    margin-top: 2%;
 
     div {
       width: 100%;

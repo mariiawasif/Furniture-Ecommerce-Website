@@ -1,163 +1,106 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import Categories from './CategoriesP';
 import productImage from '../../assets/Categories/chair1.png';
 import productImage1 from '../../assets/Categories/chair.png';
 import productImage2 from '../../assets/Categories/pic.png';
 
-const Category = styled.div`
-  font-family: 'Bergen Sans Semi Bold', sans-serif;
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "Bergen Sans Semi Bold";
+    src: url("C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff2") format("woff2"),
+         url("C://Users//MariaWasif//Downloads//BergenSans-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    font-size: 62.5%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  body {
+    font-size: 1.6rem;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: 'Bergen Sans Semi Bold', sans-serif;
+  }
+`;
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  padding: 20px;
+  gap: 20px; 
+  flex-wrap: wrap; 
+  text-align: center; /* Center text inside AppContainer */
+
+  @media (max-width: 1024px) {
+    width: 100%; /* Ensure full width on smaller screens */
+  }
+
+  @media (max-width: 1440px) {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50%; 
+  }
 `;
 
 const CHeading = styled.h1`
   color: #22155B;
   font-size: 40px;
   text-align: center;
-`;
 
-const PGrid = styled.div`
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 7%;
-`;
-
-const CGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 10px; 
-  margin-top: -10px;
-  padding: 15px;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  @media (max-width: 1024px) {
+    font-size: 30px; /* Adjust font size for smaller screens */
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: 1fr; /* 1 column on very small screens */
+    font-size: 25px; /* Adjust font size for very small screens */
   }
 `;
 
-const CGridItemContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+const products = [
+  {
+    image: productImage,
+    name: "Comfort Handy Craft",
+    price: "$42.00",
+    oldPrice: "$65.00"
+  },
+  {
+    image: productImage1,
+    name: "Comfort Handy Craft",
+    price: "$42.00",
+    oldPrice: "$65.00"
+  },
+  {
+    image: productImage2,
+    name: "Comfort Handy Craft",
+    price: "$42.00",
+    oldPrice: "$65.00"
+  },
+  {
+    image: productImage,
+    name: "Comfort Handy Craft",
+    price: "$42.00",
+    oldPrice: "$65.00"
+  }
+];
 
-const CGridItem = styled.div`
-  width: 250px; 
-  height: 250px; 
-  border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  position: relative;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; 
-`;
-
-const UpperCont1 = styled.div`
-  width: 100%;
-  height: 100%; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f3f3f9;
-`;
-
-const ProductImage = styled.img`
-  width: 80%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-`;
-
-const ItemsInfo = styled.div`
-  width: 100%;
-  text-align: center;
-  padding-top: 10px;
-  margin-top: 10px; 
-`;
-
-const ProductName = styled.p`
-  color: #22155B;
-`;
-
-const PPrice1 = styled.p`
-  color: #22155B;
-`;
-
-const OldPrice = styled.span`
-  text-decoration: line-through;
-  color: grey;
-  margin-left: 5px;
-`;
-
-function Categories() {
+function App() {
   return (
-    <Category>
-      <CHeading>Top Categories</CHeading>
-      <PGrid>
-        <CGrid>
-
-          {/* Card 1 */}
-          <CGridItemContainer>
-            <CGridItem>
-              <UpperCont1>
-                <ProductImage src={productImage} alt="Product" />
-              </UpperCont1>
-            </CGridItem>
-            <ItemsInfo>
-              <ProductName>Comfort Handy Craft</ProductName>
-              <PPrice1>$42.00 <OldPrice>$65.00</OldPrice></PPrice1>
-            </ItemsInfo>
-          </CGridItemContainer>
-
-          {/* Card 2 */}
-          <CGridItemContainer>
-            <CGridItem>
-              <UpperCont1>
-                <ProductImage src={productImage1} alt="Product" />
-              </UpperCont1>
-            </CGridItem>
-            <ItemsInfo>
-              <ProductName>Comfort Handy Craft</ProductName>
-              <PPrice1>$42.00 <OldPrice>$65.00</OldPrice></PPrice1>
-            </ItemsInfo>
-          </CGridItemContainer>
-
-          {/* Card 3 */}
-          <CGridItemContainer>
-            <CGridItem>
-              <UpperCont1>
-                <ProductImage src={productImage2} alt="Product" />
-              </UpperCont1>
-            </CGridItem>
-            <ItemsInfo>
-              <ProductName>Comfort Handy Craft</ProductName>
-              <PPrice1>$42.00 <OldPrice>$65.00</OldPrice></PPrice1>
-            </ItemsInfo>
-          </CGridItemContainer>
-
-          {/* Card 4 */}
-          <CGridItemContainer>
-            <CGridItem>
-              <UpperCont1>
-                <ProductImage src={productImage} alt="Product" />
-              </UpperCont1>
-            </CGridItem>
-            <ItemsInfo>
-              <ProductName>Comfort Handy Craft</ProductName>
-              <PPrice1>$42.00 <OldPrice>$65.00</OldPrice></PPrice1>
-            </ItemsInfo>
-          </CGridItemContainer>
-
-        </CGrid>
-      </PGrid>
-    </Category>
+    <>
+      <GlobalStyle />
+      {/* <AppContainer> */}
+        <CHeading>Top Categories</CHeading>
+        <Categories products={products} />
+      {/* </AppContainer> */}
+    </>
   );
 }
 
-export default Categories;
+export default App;

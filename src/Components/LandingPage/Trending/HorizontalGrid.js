@@ -1,28 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const AppContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin-top: -26%;
-  margin-right: 22%;
-
-  @media screen and (max-width: 768px) {
-    margin-top: 0;
-    margin-right: 0;
-    height: auto;
-    flex-direction: column;
-  }
-`;
-
-const TContainer = styled.div`
-  display: flex;
-  gap: 40px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-`;
 
 const TItem = styled.div`
   background-color: #f3f3f9;
@@ -34,13 +12,15 @@ const TItem = styled.div`
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   flex-grow: 1;
-
+  margin: 0 auto; 
   @media screen and (max-width: 768px) {
     width: 100%;
     flex-direction: column;
     text-align: center;
   }
+ 
 `;
+
 
 const TextContainer = styled.div`
   display: flex;
@@ -56,6 +36,7 @@ const TextContainer = styled.div`
     font-size: 100%;
     text-align: center;
   }
+    
 `;
 
 const DiscountText = styled.div`
@@ -96,12 +77,17 @@ const TImage = styled.img`
     margin-bottom: 10px;
     width: 100px;
   }
+
+  
+
+
 `;
 
 function HorizontalGrid({ heading, image }) {
   return (
     // <AppContainer>
     //   <TContainer>
+    
         <TItem>
           <TextContainer>
             <DiscountText>{heading}</DiscountText>
@@ -109,6 +95,7 @@ function HorizontalGrid({ heading, image }) {
           </TextContainer>
           <TImage src={image} alt="Product Image" />
         </TItem>
+        
     //   </TContainer>
     // </AppContainer>
   );

@@ -29,6 +29,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-size: 1.6rem;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bergen Sans Semi Bold', sans-serif;
   }
 `;
 
@@ -36,8 +40,8 @@ const TrendingContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Center vertically */
   margin-bottom: 10%;
-  justify-content: center;
 `;
 
 const TrendingHeading = styled.h1`
@@ -47,12 +51,21 @@ const TrendingHeading = styled.h1`
   font-weight: bold;
   color: #22155b;
   font-size: 4rem;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const ParentGrid1 = styled.div`
   display: flex;
   justify-content: center;
   padding: 2rem 0;
+  width: 100%; /* Ensure full width */
 `;
 
 const TrendingGrid = styled.div`
@@ -63,65 +76,155 @@ const TrendingGrid = styled.div`
   margin: 0 auto;
   padding: 0 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
   }
 
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr; /* Single column on small screens */
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
   }
-`;
 
-const Horizontal = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 1px; /* Adjust this value to reduce the gap */
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-top: 75px;
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; /* Single column on smallest screens */
+  }
 `;
 
 const AppContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin-top: -20%;
-  margin-right: 12%;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-top: 2rem;
 
-  @media screen and (max-width: 768px) {
-    margin-top: 0;
-    margin-right: 0;
-    height: auto;
+  @media (max-width: 649px) {
+    width: 100%;
     flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 320px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 2560px) {
+    width: 48%;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    width: 20%;
+  }
+
+  @media (max-width: 1440px) {
+    flex-direction: row;
+    width: 80%;
+    margin-left: 0;
+    justify-content: center;
   }
 `;
 
 const TContainer = styled.div`
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
   margin-bottom: 20px;
-  flex-wrap: wrap;
+  flex: 3;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 649px) {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 20px; /* Add some gap between the horizontal grids */
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+    padding: 90px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 320px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const ProductList = styled.div`
-display: flex;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 10px;
+  margin-left: 20px;
+  flex: 1;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  @media (max-width: 649px) {
     flex-direction: column;
-    margin-right: -25%;
-    width: 200px;
-    gap: 10px;
-    margin-bottom: 20px;
-    margin-left: 1%;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+  }
 
-    @media screen and (max-width: 768px) {
-      flex-direction: row;
-      margin-right: 0;
-      width: 100%;
-      margin-left: 0;
-      justify-content: center;
-    }
+  @media (max-width: 425px) {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+  }
 
+  @media (max-width: 375px) {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @media (max-width: 320px) {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 function Trending() {
@@ -162,18 +265,15 @@ function Trending() {
         {/* Horizontal Grids */}
         <AppContainer>
           <TContainer>
-          <HorizontalGrid heading="Special Offer" image={image} />
-          <HorizontalGrid heading="Best Deals" image={image2} />
+            <HorizontalGrid heading="Special Offer" image={image} />
+            <HorizontalGrid heading="Best Deals" image={image2} />
           </TContainer>
+
+          <ProductList>
+            <Products image={image} />
+            <Products image={image} />
+          </ProductList>
         </AppContainer>
-
-        <ProductList>
-          <Products image={image}/>
-          <Products image={image}/>
-          <Products image={image}/>
-        </ProductList>
-
-
       </TrendingContainer>
     </>
   );

@@ -8,9 +8,11 @@ import Latest from './Components/LandingPage/Latest/Latest';
 import Features from './Components/LandingPage/Features/Features';
 import Trending from './Components/LandingPage/Trending/Trending';
 import Discount from './Components/LandingPage/Discount/Discount';
-import Categories from './Components/LandingPage/Categories/Categories';
+import Categories from './Components/LandingPage/Categories/Categories'; 
 import GlobalStyle from './Components/LandingPage/GlobalStyle/GlobalStyles';
 import Newsletter from './Components/LandingPage/Newsletter/Newsletter';
+import Blog from './Components/LandingPage/Blog/BlogC';
+import Footer from './Components/LandingPage/Footer/Footer';
 
 function App() {
   return (
@@ -23,9 +25,11 @@ function App() {
       <Latest/> 
       <Features/> 
       <Trending/>
-      {/* <Discount/> */}
-      {/* <Categories/> */}
-      {/* <Newsletter/> */}
+      <Discount/>
+      <Categories/>
+      <Newsletter/>
+      <Blog/>
+      <Footer/>
     </BrowserRouter>
   );
 }

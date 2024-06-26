@@ -129,8 +129,18 @@ const CartParagraph = styled.p`
     margin-left: auto; 
     margin-right: auto;
     text-align: center; 
-    margin-bottom: 5%;
+    margin-bottom: 8%;
   }
+
+  @media (max-width: 1024px) {
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center; 
+  }
+
+  
+
+   
 `;
 
 const PriceParagraph = styled.p`
@@ -139,11 +149,21 @@ const PriceParagraph = styled.p`
   margin-left: 15%;
 
   @media (max-width: 768px) {
-    margin-top: -4.5%;
+    
     margin-left: auto;
     margin-right: auto; 
     text-align: center; 
   }
+    
+  @media (max-width: 1024px) {
+    margin-top: -7%;
+    
+  }
+
+  @media (max-width: 2560px) {
+   margin-top: -3%;
+  }
+
 `;
 
 function Features() {

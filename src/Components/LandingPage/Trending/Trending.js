@@ -94,9 +94,9 @@ const AppContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  width: 80%;
+  width: 60%;
   margin-top: 2rem;
-
+  gap: 10px;
   @media (max-width: 649px) {
     width: 100%;
     flex-direction: column;
@@ -116,7 +116,7 @@ const AppContainer = styled.div`
   }
 
   @media (max-width: 2560px) {
-    width: 48%;
+    width: 50%;
     align-items: center;
   }
 
@@ -125,10 +125,7 @@ const AppContainer = styled.div`
   }
 
   @media (max-width: 1440px) {
-    flex-direction: row;
-    width: 80%;
-    margin-left: 0;
-    justify-content: center;
+    
   }
 `;
 
@@ -181,7 +178,6 @@ const ProductList = styled.div`
   flex-direction: column;
   width: 200px;
   gap: 10px;
-  margin-left: 20px;
   flex: 1;
   justify-content: center;
 
@@ -200,10 +196,8 @@ const ProductList = styled.div`
   }
 
   @media (max-width: 425px) {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 20px;
+    flex-direction: row;
+    
   }
 
   @media (max-width: 375px) {
@@ -221,9 +215,33 @@ const ProductList = styled.div`
   }
 
   @media (max-width: 1024px) {
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     align-items: center;
+  }
+`;
+
+const HorizontalContainer = styled.div`
+   display: flex;
+
+   @media (max-width: 1024px) {
+    width: 60%;
+    justify-content: center;
+    gap: 2px;
+   
+  }
+  @media (max-width: 768px) {
+    width: 70%;
+    height: 30%;
+    justify-content: center;
+    gap: 2px;
+   
+  }
+  @media (max-width: 425px) {
+     flex-direction: column;
+     gap: 30px;
+     width: 100%;
+   
   }
 `;
 
@@ -263,17 +281,29 @@ function Trending() {
         </ParentGrid1>
 
         {/* Horizontal Grids */}
-        <AppContainer>
-          <TContainer>
-            <HorizontalGrid heading="Special Offer" image={image} />
-            <HorizontalGrid heading="Best Deals" image={image2} />
-          </TContainer>
+        {/* <AppContainer> */}
+          {/* <TContainer> */}
+            {/* <HorizontalGrid heading="Special Offer" image={image} />
+            <HorizontalGrid heading="Best Deals" image={image2} /> */}
+          {/* </TContainer> */}
 
-          <ProductList>
+          {/* <ProductList>
             <Products image={image} />
             <Products image={image} />
-          </ProductList>
-        </AppContainer>
+          </ProductList> */}
+
+          <HorizontalContainer>
+            <HorizontalGrid heading="Special Offer" image={image} />
+            <HorizontalGrid heading="Special Offer" image={image2} />
+            <ProductList>
+              <Products image={image} />
+              <Products image={image} />
+            </ProductList>  
+              
+          </HorizontalContainer>
+
+
+        {/* </AppContainer> */}
       </TrendingContainer>
     </>
   );

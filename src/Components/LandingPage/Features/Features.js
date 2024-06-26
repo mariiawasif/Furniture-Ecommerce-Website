@@ -122,21 +122,21 @@ const CartButton = styled.button`
 
 const CartParagraph = styled.p`
   color: #22155B;
-  margin-top: 3%;
-  margin-left: 25%;
+  // margin-top: 3%;
+  // margin-left: 25%;
 
-  @media (max-width: 768px) {
-    margin-left: auto; 
-    margin-right: auto;
-    text-align: center; 
-    margin-bottom: 8%;
-  }
+  // @media (max-width: 768px) {
+  //   margin-left: auto; 
+  //   margin-right: auto;
+  //   text-align: center; 
+  //   margin-bottom: 8%;
+  // }
 
-  @media (max-width: 1024px) {
-    margin-left: auto; 
-    margin-right: auto;
-    text-align: center; 
-  }
+  // @media (max-width: 1024px) {
+  //   margin-left: auto; 
+  //   margin-right: auto;
+  //   text-align: center; 
+  // }
 
   
 
@@ -145,25 +145,50 @@ const CartParagraph = styled.p`
 
 const PriceParagraph = styled.p`
   color: #22155B;
-  margin-top: -5%;
+  // margin-top: -5%;
+  // margin-left: 15%;
+
+  // @media (max-width: 768px) {
+    
+  //   margin-left: auto;
+  //   margin-right: auto; 
+  //   text-align: center; 
+  // }
+    
+  // @media (max-width: 1024px) {
+  //   margin-top: -7%;
+    
+  // }
+
+  // @media (max-width: 2560px) {
+  //  margin-top: -3%;
+  // }
+
+`;
+
+const Texts= styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
   margin-left: 15%;
 
+  
   @media (max-width: 768px) {
-    
-    margin-left: auto;
-    margin-right: auto; 
-    text-align: center; 
-  }
-    
-  @media (max-width: 1024px) {
-    margin-top: -7%;
-    
+    text-align: center;
+    margin-left: 37%; 
   }
 
-  @media (max-width: 2560px) {
-   margin-top: -3%;
+  @media (max-width: 320px) {
+    justify-content: center;
+    margin-right: 30%;
+    white-space: nowrap;
+    
   }
-
+  @media (max-width: 375px) {
+    justify-content: center;
+   
+    
+  }
 `;
 
 function Features() {
@@ -186,8 +211,11 @@ function Features() {
         </StyledList>
         
         <CartButton>Add to Cart</CartButton>
+        <Texts>
         <CartParagraph>B&B Italian Sofa</CartParagraph>
         <PriceParagraph>$32.00</PriceParagraph>
+        </Texts>
+        
       </FeaturesRight>
     </FeaturesContainer>
   );

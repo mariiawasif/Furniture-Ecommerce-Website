@@ -29,11 +29,12 @@ const NavMenu = styled.ul`
     right: 0;
     gap: 1rem;
     height: 92vh;
-    width: 30vw;
+    width: 70vw;
     background: rgb(255, 255, 255);
     flex-direction: column;
     transform: ${({ active }) => (active ? 'translateX(0%)' : 'translateX(100%)')};
     transition: 0.5s ease-in;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -60,7 +61,7 @@ const NavBrand = styled.a`
 
 const Logo = styled.img`
   width: auto;
-  height: 6vh; // Make sure the logo stays within the navbar height
+  height: 6vh;
 
   @media screen and (max-width: 768px) {
     height: 5vh;
@@ -81,7 +82,7 @@ const SearchBar = styled.div`
 
   @media (max-width: 1024px) {
     margin-right: 14%;
-    width: 10%;
+    width: auto;
   }
 `;
 
@@ -90,27 +91,23 @@ const SearchInput = styled.input`
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: 1px solid #ced4da;
-  margin-left: 20%;
+
+  @media (max-width: 1024px) {
+    width: 150px;
+  }
 `;
 
 const SearchButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin-left: 0;
-  height: 8px;
-  margin-top: -7%;
+  margin-left: -40px;
 
   i {
     background-color: #FB2E86;
     color: #ffffff;
-    width: 40px;
     padding: 0.6rem;
     border-radius: 0.25rem;
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: -80%;
   }
 `;
 
@@ -120,10 +117,7 @@ const NavToggler = styled.div`
   @media screen and (max-width: 768px) {
     display: block;
     cursor: pointer;
-  }
-
-  @media screen and (max-width: 425px) {
-    cursor: pointer;
+    position: relative;
   }
 
   &.toggle .line1 {

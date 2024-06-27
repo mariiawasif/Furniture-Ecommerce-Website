@@ -29,7 +29,11 @@ const NavMenu = styled.ul`
     right: 0;
     gap: 1rem;
     height: 92vh;
+<<<<<<< HEAD
     width: 40vw;
+=======
+    width: 70vw;
+>>>>>>> 8a72b8a951be8ad2f4e8646df291473abcd1a60f
     background: rgb(255, 255, 255);
     flex-direction: column;
     transform: ${({ active }) => (active ? 'translateX(0%)' : 'translateX(100%)')};

@@ -78,7 +78,10 @@ const ContactInfo = styled.p`
   color: #333;
 `;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8a72b8a951be8ad2f4e8646df291473abcd1a60f
 const Footer = () => (
   <FooterContainer>
     <FooterSection>

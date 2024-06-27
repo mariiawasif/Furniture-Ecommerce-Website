@@ -7,7 +7,11 @@ const TItem = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 450px;
+<<<<<<< HEAD
   height: 150px; 
+=======
+  height: 150px; /* Set a fixed height for the grid */
+>>>>>>> 8a72b8a951be8ad2f4e8646df291473abcd1a60f
   padding: 20px;
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -16,7 +20,11 @@ const TItem = styled.div`
   @media screen and (max-width: 768px) {
     width: 100%;
     flex-direction: column;
+<<<<<<< HEAD
     height: auto;
+=======
+    height: auto; /* Allow height to adjust on smaller screens */
+>>>>>>> 8a72b8a951be8ad2f4e8646df291473abcd1a60f
     text-align: center;
   }
 `;
@@ -58,8 +66,13 @@ const DiscountText = styled.div`
 `;
 
 const TImage = styled.img`
+<<<<<<< HEAD
   width: 100px; 
   height: 100px; 
+=======
+  width: 100px; /* Set a fixed width for the image */
+  height: 100px; /* Set a fixed height for the image */
+>>>>>>> 8a72b8a951be8ad2f4e8646df291473abcd1a60f
   background-color: #f3f3f9;
 
   @media screen and (max-width: 768px) {

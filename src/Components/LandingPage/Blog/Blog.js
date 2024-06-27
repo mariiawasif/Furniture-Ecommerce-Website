@@ -59,7 +59,7 @@ const BlogContent = styled.div`
   }
  
   &:hover {
-    background-color: #7e33e0; /* Change background color on hover */
+    background-color: #7e33e0; 
     
     h3 {
       color: white; 

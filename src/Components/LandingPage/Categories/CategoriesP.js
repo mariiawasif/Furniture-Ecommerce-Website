@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Category = styled.div`
   font-family: 'Bergen Sans Semi Bold', sans-serif;
-  flex: 1; /* Ensure the category takes up equal space in the row */
+  flex: 1; 
 `;
 
 const CHeading = styled.h1`
@@ -26,18 +26,18 @@ const CGrid = styled.div`
   gap: 50px;
   padding: 15px;
   width: 100%;
-  justify-items: center; /* Center items within each grid cell */
+  justify-items: center; 
 
   @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    grid-template-columns: repeat(2, 1fr); 
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: 1fr; /* 1 column on very small screens */
+    grid-template-columns: 1fr; 
   }
 `;
 

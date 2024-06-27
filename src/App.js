@@ -13,10 +13,13 @@ import GlobalStyle from './Components/LandingPage/GlobalStyle/GlobalStyles';
 import Newsletter from './Components/LandingPage/Newsletter/Newsletter';
 import Blog from './Components/LandingPage/Blog/BlogC';
 import Footer from './Components/LandingPage/Footer/Footer';
+import Shop from './Components/Pages/Shopgrid';
 
 function App() {
   return (
     <BrowserRouter>
+     {/* Landing Page */}
+      
       <GlobalStyle/>
       <Header/>
       <Navbar/>
@@ -30,6 +33,7 @@ function App() {
       <Newsletter/>
       <Blog/>
       <Footer/>
+
     </BrowserRouter>
   );
 }

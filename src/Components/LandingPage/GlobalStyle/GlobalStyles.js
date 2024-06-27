@@ -15,7 +15,6 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Bergen Sans Semi Bold', sans-serif;
-    /* Optionally set other default styles for body */
     margin: 0;
     padding: 0;
   }

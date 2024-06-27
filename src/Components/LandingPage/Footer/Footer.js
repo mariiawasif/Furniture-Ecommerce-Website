@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Styled Components
+
 const FooterContainer = styled.footer`
   background-color: #f3f3f9;
   padding: 20px 50px;
@@ -78,7 +78,7 @@ const ContactInfo = styled.p`
   color: #333;
 `;
 
-// Footer Component
+
 const Footer = () => (
   <FooterContainer>
     <FooterSection>

@@ -17,12 +17,12 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
   }
 
   body {
     font-size: 1.6rem;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
     font-family: 'Bergen Sans Semi Bold', sans-serif;
   }
 `;
@@ -35,10 +35,10 @@ const AppContainer = styled.div`
   padding: 20px;
   gap: 20px; 
   flex-wrap: wrap; 
-  text-align: center; /* Center text inside AppContainer */
+  text-align: center; 
 
   @media (max-width: 1024px) {
-    width: 100%; /* Ensure full width on smaller screens */
+    width: 100%;
   }
 
   @media (max-width: 1440px) {
@@ -56,11 +56,11 @@ const CHeading = styled.h1`
   text-align: center;
 
   @media (max-width: 1024px) {
-    font-size: 30px; /* Adjust font size for smaller screens */
+    font-size: 30px;
   }
 
   @media (max-width: 480px) {
-    font-size: 25px; /* Adjust font size for very small screens */
+    font-size: 25px; 
   }
 `;
 

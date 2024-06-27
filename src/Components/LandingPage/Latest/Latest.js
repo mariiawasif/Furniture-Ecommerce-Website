@@ -9,7 +9,7 @@ import productImage5 from "../../assets/Latest/pic5.png";
 import productImage6 from "../../assets/Latest/pic7.png";
 import Shopex from "./Shopex";
 
-// Global Styles
+
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Bergen Sans Semi Bold";
@@ -22,12 +22,12 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
   }
 
   body {
     font-size: 1.6rem;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
   }
 `;
 
@@ -52,7 +52,7 @@ const LatestHeadline = styled.div`
   padding: 6px;
   background-color: white;
 
-  /* Default height for large screens */
+ 
   height: 5vh;
 
   @media (max-width: 1200px) {
@@ -108,11 +108,11 @@ const LatestGrid = styled.div`
   padding: 0 20px;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    grid-template-columns: repeat(2, 1fr); 
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: 1fr; /* Single column on small screens */
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -160,17 +160,17 @@ const ShopexContainer = styled.div`
   }
 
    @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    grid-template-columns: repeat(2, 1fr); 
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 10px;
     padding: 10px;
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: 1fr; /* Single column on small screens */
+    grid-template-columns: 1fr; 
     gap: 5px;
     padding: 5px;
   }

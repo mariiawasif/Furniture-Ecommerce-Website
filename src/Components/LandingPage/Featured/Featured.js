@@ -6,7 +6,7 @@ import chair2 from '../../assets/Featured/chair2.png';
 import chair3 from '../../assets/Featured/chair3.png';
 import chair4 from '../../assets/Featured/chair4.png';
 
-// Global Styles
+
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Bergen Sans Semi Bold';
@@ -49,23 +49,23 @@ const FeaturedHeading = styled.h1`
 `;
 
 const GridContainer = styled.div`
-  padding: 2rem 0; /* Adjust padding as needed */
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
 
   @media (max-width: 768px) {
-    padding: 1rem 0; /* Adjust padding for smaller screens */
+    padding: 1rem 0;
   }
 
   @media (max-width: 480px) {
-    padding: 0.5rem 0; /* Further adjust padding for smallest screens */
+    padding: 0.5rem 0; 
   }
 `;
 
 
 const FeaturedGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid columns */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
   justify-items: center; 
   gap: 4rem; 
 

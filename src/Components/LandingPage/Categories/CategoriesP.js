@@ -6,18 +6,13 @@ const Category = styled.div`
   flex: 1; 
 `;
 
-const CHeading = styled.h1`
-  color: #22155B;
-  font-size: 40px;
-  text-align: center;
-`;
-
 const PGrid = styled.div`
   display: flex;
   align-content: center;
   justify-content: center;
   gap: 5px;
   padding: 7%;
+  width: 100%;
 `;
 
 const CGrid = styled.div`
@@ -97,29 +92,21 @@ const OldPrice = styled.span`
   margin-left: 5px;
 `;
 
-function CategoriesP({ products }) {
+function CategoriesP({ name, image, price, oldPrice }) {
   return (
-    <Category>
-      <PGrid>
-        <CGrid>
-          {products.map((product, index) => (
-            <CGridItemContainer key={index}>
-              <CGridItem>
-                <UpperCont1>
-                  <ProductImage src={product.image} alt="Product" />
-                </UpperCont1>
-              </CGridItem>
-              <ItemsInfo>
-                <ProductName>{product.name}</ProductName>
-                <PPrice1>
-                  {product.price} <OldPrice>{product.oldPrice}</OldPrice>
-                </PPrice1>
-              </ItemsInfo>
-            </CGridItemContainer>
-          ))}
-        </CGrid>
-      </PGrid>
-    </Category>
+    <CGridItemContainer>
+      <CGridItem>
+        <UpperCont1>
+          <ProductImage src={image} alt="Product" />
+        </UpperCont1>
+      </CGridItem>
+      <ItemsInfo>
+        <ProductName>{name}</ProductName>
+        <PPrice1>
+          {price} <OldPrice>{oldPrice}</OldPrice>
+        </PPrice1>
+      </ItemsInfo>
+    </CGridItemContainer>
   );
 }
 

@@ -230,6 +230,13 @@ const HorizontalContainer = styled.div`
     gap: 2px;
    
   }
+
+  @media (max-width: 1440px) {
+    gap: 5px;
+    text-align: center;
+   
+  }
+
   @media (max-width: 768px) {
     width: 70%;
     height: 30%;

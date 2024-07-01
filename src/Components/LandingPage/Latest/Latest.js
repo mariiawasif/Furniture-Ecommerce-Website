@@ -1,13 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import FeaturedCard from "../Featured/FeaturedCard";
-import productImage from "../../assets/Latest/pic1.png";
-import productImage2 from "../../assets/Latest/pic2.png";
-import productImage3 from "../../assets/Latest/pic3.png";
-import productImage4 from "../../assets/Latest/pic4.png";
-import productImage5 from "../../assets/Latest/pic5.png";
-import productImage6 from "../../assets/Latest/pic7.png";
 import Shopex from "./Shopex";
+import { addLatestProductsToFirestore, fetchLatestProductsFromFirestore, latestProducts, addShopexDataToFirestore, fetchShopexDataFromFirestore, shopexData } from "../../../firestoreUtils";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -177,6 +172,31 @@ const ShopexContainer = styled.div`
 `;
 
 function Latest() {
+
+ 
+    const [latestProducts1, setLatestProducts] = useState([]);
+    const [shopexData1, setShopexData] = useState([]);
+  
+    useEffect(() => {
+      
+      const addDataToFirestore = async () => {
+        await addLatestProductsToFirestore(latestProducts);
+        await addShopexDataToFirestore(shopexData);
+      };
+  
+     
+      const fetchDataFromFirestore = async () => {
+        const fetchedLatestProducts = await fetchLatestProductsFromFirestore();
+        const fetchedShopexData = await fetchShopexDataFromFirestore();
+        setLatestProducts(fetchedLatestProducts);
+        setShopexData(fetchedShopexData);
+      };
+  
+      addDataToFirestore();
+      fetchDataFromFirestore();
+    }, []);
+
+
   return (
     <>
       <GlobalStyle />
@@ -191,81 +211,25 @@ function Latest() {
           </LatestLinks>
         </LatestHeadline>
         <ParentGrid>
-          <LatestGrid>
-            <CardWrapper>
-              <SaleBadge>Sale</SaleBadge>
-              <FeaturedCard
-                image={productImage}
-                title="Comfort Handy Craft"
-                code="12345"
-                price="42.00"
-              />
-            </CardWrapper>
-            <CardWrapper>
-              <SaleBadge>Sale</SaleBadge>
-              <FeaturedCard
-                image={productImage2}
-                title="Comfort Handy Craft"
-                code="12346"
-                price="42.00"
-              />
-            </CardWrapper>
-            <CardWrapper>
-              <SaleBadge>Sale</SaleBadge>
-              <FeaturedCard
-                image={productImage3}
-                title="Comfort Handy Craft"
-                code="12347"
-                price="42.00"
-              />
-            </CardWrapper>
-            <CardWrapper>
-              <SaleBadge>Sale</SaleBadge>
-              <FeaturedCard
-                image={productImage4}
-                title="Comfort Handy Craft"
-                code="12348"
-                price="42.00"
-              />
-            </CardWrapper>
-            <CardWrapper>
-              <SaleBadge>Sale</SaleBadge>
-              <FeaturedCard
-                image={productImage5}
-                title="Comfort Handy Craft"
-                code="12349"
-                price="42.00"
-              />
-            </CardWrapper>
-            <CardWrapper>
-              <SaleBadge>Sale</SaleBadge>
-              <FeaturedCard
-                image={productImage6}
-                title="Comfort Handy Craft"
-                code="12350"
-                price="42.00"
-              />
-            </CardWrapper>
+        <LatestGrid>
+            {latestProducts.map((product) => (
+              <CardWrapper key={product.id}>
+                <SaleBadge>Sale</SaleBadge>
+                <FeaturedCard
+                  image={product.imageSrc}
+                  title={product.name}
+                  code={product.description}
+                  price={product.price}
+                />
+              </CardWrapper>
+            ))}
           </LatestGrid>
         </ParentGrid>
         <LatestHeading>What Shopex Offers</LatestHeading>
         <ShopexContainer>
-          <Shopex
-            title="24/7 Support"
-            text="No matter the hour, count on us for reliable 24/7 support!"
-          />
-          <Shopex
-            title="Free Shipping"
-            text="Get free shipping on all orders above $50."
-          />
-          <Shopex
-            title="Easy Returns"
-            text="30-day return policy on all purchases."
-          />
-          <Shopex
-            title="Secure Payment"
-            text="100% secure payment with SSL encryption."
-          />
+          {shopexData.map((shopexItem) => (
+            <Shopex key={shopexItem.id} title={shopexItem.title} text={shopexItem.text} />
+          ))}
         </ShopexContainer>
       </LatestContainer>
     </>

@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Categories from './CategoriesP';
-import productImage from '../../assets/Categories/chair1.png';
-import productImage1 from '../../assets/Categories/chair.png';
-import productImage2 from '../../assets/Categories/pic.png';
+import CategoriesP from './CategoriesP';
+import { addCategoriesToFirestore, fetchCategoriesFromFirestore, categories } from "../../../firestoreUtils";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -17,25 +15,25 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%;
-    overflow-x: hidden; 
+    overflow-x: hidden;
   }
 
   body {
     font-size: 1.6rem;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     font-family: 'Bergen Sans Semi Bold', sans-serif;
   }
 `;
 
 const AppContainer = styled.div`
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: 20px;
-  gap: 20px; 
-  flex-wrap: wrap; 
-  text-align: center; 
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: center;
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -46,7 +44,7 @@ const AppContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-right: 50%; 
+    margin-right: 50%;
   }
 `;
 
@@ -60,47 +58,71 @@ const CHeading = styled.h1`
   }
 
   @media (max-width: 480px) {
-    font-size: 25px; 
+    font-size: 25px;
   }
 `;
 
-const products = [
-  {
-    image: productImage,
-    name: "Comfort Handy Craft",
-    price: "$42.00",
-    oldPrice: "$65.00"
-  },
-  {
-    image: productImage1,
-    name: "Comfort Handy Craft",
-    price: "$42.00",
-    oldPrice: "$65.00"
-  },
-  {
-    image: productImage2,
-    name: "Comfort Handy Craft",
-    price: "$42.00",
-    oldPrice: "$65.00"
-  },
-  {
-    image: productImage,
-    name: "Comfort Handy Craft",
-    price: "$42.00",
-    oldPrice: "$65.00"
-  }
-];
+const CGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  padding: 15px;
+  width: 100%;
+  justify-items: center; 
 
-function App() {
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; 
+  }
+`;
+
+const App = () => {
+  const [categoryList, setCategoryList] = useState([]);
+
+  useEffect(() => {
+    addCategoriesToFirestore(categories).catch(error => {
+      console.error('Failed to add categories to Firestore:', error);
+    });
+  }, []);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const fetchedCategories = await fetchCategoriesFromFirestore();
+        setCategoryList(fetchedCategories);
+      } catch (error) {
+        console.error('Failed to fetch categories from Firestore:', error);
+      }
+    };
+    fetchCategories();
+  }, []);
+
   return (
     <>
       <GlobalStyle />
-      {/* <AppContainer> */}
-        <CHeading>Top Categories</CHeading>
-        <Categories products={products} />
-      {/* </AppContainer> */}
+      <CHeading>Top Categories</CHeading>
+      <AppContainer>
+        <CGrid>
+          {categoryList.map((category, index) => (
+            <CategoriesP
+              key={index}
+              image={category.image}
+              name={category.name}
+              price={category.price}
+              oldPrice={category.oldPrice}
+            />
+          ))}
+        </CGrid>
+      </AppContainer>
     </>
   );
-}
+};
 
 export default App;

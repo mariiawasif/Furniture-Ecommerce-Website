@@ -1,11 +1,8 @@
-import React from "react";
+// Featured.js
+import React, { useState, useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import FeaturedCard from './FeaturedCard';
-import chair1 from '../../assets/Featured/chair.png';
-import chair2 from '../../assets/Featured/chair2.png';
-import chair3 from '../../assets/Featured/chair3.png';
-import chair4 from '../../assets/Featured/chair4.png';
-
+import { addProductsToFirestore, fetchProductsFromFirestore , products } from "../../../firestoreUtils"; 
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -62,7 +59,6 @@ const GridContainer = styled.div`
   }
 `;
 
-
 const FeaturedGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -73,7 +69,7 @@ const FeaturedGrid = styled.div`
   margin: 0 auto;
   padding: 0 20px; 
 
- @media (max-width: 1200px) {
+  @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr); 
     gap: 3rem;
     padding: 0 15px;
@@ -92,8 +88,23 @@ const FeaturedGrid = styled.div`
   }
 `;
 
-
 function Featured() {
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    addProductsToFirestore(products); 
+  }, []);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const fetchedProducts = await fetchProductsFromFirestore();
+      setProductList(fetchedProducts);
+    };
+    fetchProducts();
+    console.log(productList);
+    
+  }, []);
+
   return (
     <>
       <GlobalStyle />
@@ -101,30 +112,15 @@ function Featured() {
         <FeaturedHeading>Featured Products</FeaturedHeading>
         <GridContainer>
           <FeaturedGrid>
-            <FeaturedCard
-              image={chair1}
-              title="Cantilever Chair"
-              code="Y523201"
-              price="42.00"
-            />
-            <FeaturedCard
-              image={chair2}
-              title="Cantilever Chair"
-              code="Y523201"
-              price="42.00"
-            />
-            <FeaturedCard
-              image={chair3}
-              title="Elegant Chair"
-              code="Y523202"
-              price="55.00"
-            />
-            <FeaturedCard
-              image={chair4}
-              title="Modern Chair"
-              code="Y523203"
-              price="60.00"
-            />
+          {productList.map(product => (
+              <FeaturedCard
+                key={product.id}
+                image={product.imageSrc}
+                title={product.name}
+                code={product.description}
+                price={product.price}
+              />
+            ))}
           </FeaturedGrid>
         </GridContainer>
       </FeaturedContainer>
